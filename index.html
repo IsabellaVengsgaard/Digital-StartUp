@@ -1,84 +1,171 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital StartUp</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 
 <body>
-   <nav>
-       
-   </nav>
-   <div id="heroArea">
-   <div class="heroVideo"></div>
-   <h1>MCARE</h1>
-   <p>Mobil og Tablet Reparation</p>
-   </div>
-   
-   <div id="fungerer">
-       <h2>Sådan gør du!</h2>
-       <p>Fortæl os om problemet!</p>
-       <p>Book en tid og herefter reparere vi!</p>
-       <p>Inden for én time bliver din enhed repareret og efter er der 2 års garanti.</p>
-   </div>
-   
-   <div id="reparereAlt">
-   <h2>Dette kan vi reparere!</h2>
-   <img src="" alt="">
-   </div>
-   
-   <div id="fordele">
-       <h2>Grunde til at vælge MCARE</h2>
-       
-      <div> <i class="fas fa-car"></i>
-       <p class="title">VI KOMMER HEN TIL DIG</p>
-       <p>mCares uddannede teknikker kommer til dit kontor og reparer din iPhone on-site, på stedet. iPad og Samsung skal vi have med til værkstedet til reparation, hvorefter de leveres efterfølgende.</p>
-       </div>
-       
-      <div> <i class="fas fa-certificate"></i>
-       <p class="title">2 ÅRS GARANTI</p>
-       <p>Hos mCare står bag vores kvalitetsarbejde og kan derfor med sikkerhed tilbyde 2 års garanti på vores reparationer.</p>
-       </div>
-       
-       <div><i class="fas fa-globe-europe"></i>
-       <p class="title">SAMARBEJDSPARTNER MED AARHUS KOMMUNE</p>
-       <p>mCare er samarbejdspartner med Aarhus Kommune, og det har vi været i flere år. Vi reparer smartphones og tabletter.</p></div>
-       
-       <div><i class="fas fa-map-marker-alt"></i>
-       <p class="title">VI ER I AARHUS</p>
-       <p>Vi befinder os i Aarhus på Haslegårdsvej 10, 8210 Aarhus V. Du kan til enhver tid kommer med din enhed til os, men vi kører gerne ud til din arbejdsplads eller dit hjem efter aftale.</p>
-       </div>
-       
-       <div>
-       <i class="fas fa-money-bill-alt"></i>
-       <p class="title">FASTE PRISER</p>
-       <p>Enkel fast prisfastsættelse med rabatter til rådighed for flere reparationer, der skal afsluttes på en enkel aftale.</p>
-       </div>
-       
-       <div>
-       <i class="fas fa-hourglass-half"></i>
-       <p class="title">48 TIMER</p>
-       <p>Hvis du bestiller tid inden kl. 10:00, kan vi på samme dag reparere din iPhone.</p>
-       </div>
-   </div>
-   
-   <div id="book">
-       <h2>Book en tid nu!</h2>
-       
-   </div>
-   
-   
-   <footer>
-      <h3>Kontakt os</h3>
-       <p>Adresse: Haslegårdsvej 10, 8210 -Aarhus V.</p>
-       <p>Smid en E-mail på: rep@mcare.dk</p>
-       <p>Send SMS eller ring: 29 29 29 36</p>
-       <p>CVR: 34986665</p>
-       <p></p>
-   </footer>
+    <div class="flex">
+        <img src="images/Logo_M04.png" alt="MCARE Logo" class="logo">
+        <nav class="navigation">
+            <a href="#sdan">Sådan Gør Du!</a>
+            <a href="#reparereDet">Service</a>
+            <a href="#grundeMcare">Hvorfor MCARE?</a>
+            <a href="#" onclick="on()">Book Tid</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+    <div id="overlay">
+        <i class="fas fa-times" id="timesX" onclick="off()"></i>
+        <form action="/action_page.php" id="text">
+            <div><label for="fname">Navn</label>
+                <input type="text" id="fname" name="firstname" placeholder="Navn..."> <br>
+                <label for="lname">Efternavn</label>
+                <input type="text" id="lname" name="lastname" placeholder="Efternavn..">
+            </div>
+            <br>
+            <div>
+                <label for="email">E-Mail</label> <br>
+                <input type="email" name="email" placeholder="E-mail.."></div>
+            <br>
+            <div><label for="lname">Hvilken mobil/tablet handler det om?</label> <br>
+                <select id="mobil" name="teknologi">
+                    <option value="iPhone X">iPhone X</option>
+                    <option value="Samsung 9">Samsung 9</option>
+                    <option value="OnePlus 5">OnePlus 5</option>
+                </select></div>
+            <br>
+            <div> <label for="lname">Indtast adresse </label>
+                <br>
+                <input type="text" id="adresse" name="dinadresse" placeholder="Adresse.."></div>
+            <br>
+            <div><label for="day">Hvilken dag?</label><br>
+                <input type="date" name="bday"></div>
+
+            <br>
+            <div><label for="time">Hvornår på dagen?</label>
+                <br>
+                <input type="time" name="usr_time"></div>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+    <div id="heroArea">
+        <video id="myVideo" autoplay muted loop>
+            <source src="images/hero_vid.mp4" type="video/mp4">
+        </video>
+        <div class="heroText module">
+            <h1>MCARE</h1>
+            <p class="repM">Mobil og Tablet Reparation</p>
+            <p>Alle reperationer tager normalt ikke mere end 20 minutter! <br> Vi bruger 100% orginalt materiale!</p>
+            <button onclick="on()" class="bookTid">Book tid!</button>
+        </div>
+    </div>
+    <div id="sdan"></div>
+    <div class="thisIsHow">
+        <h2>Sådan gør du!</h2>
+        <div id="fungerer">
+            <div class="module"><i class="fas fa-exclamation-circle"></i>
+                <p>Fortæl os om problemet!</p>
+            </div>
+            <div class="module"><i class="fas fa-tools"></i>
+                <p>Book en tid og herefter reparere vi!</p>
+            </div>
+            <div class="module"><i class="fas fa-shield-alt"></i>
+                <p>Inden for én time bliver din enhed repareret og derefter er der 2 års garanti.</p>
+            </div>
+        </div>
+    </div>
+    <div id="reparereDet">
+        <h2>Dette kan vi reparere!</h2>
+    </div>
+<div id="reparereAlt">
+        <div>
+            <p><i class="fas fa-camera"></i> Front kamera &amp; nærhedssensor</p>
+            <span class="circle1"></span>
+            <p><i class="fas fa-power-off"></i> Tænd- &amp; slukknap</p>
+            <span class="circle2"></span>
+            <p><i class="fas fa-volume-down"></i> Volumenknapper</p>
+            <span class="circle3"></span>
+            <p><i class="fas fa-phone-volume"></i> Ørehøjtaler</p>
+            <span class="circle4"></span>
+            <p><i class="fas fa-volume-up"></i> Højtaler</p>
+            <span class="circle5"></span>
+            <p><i class="fas fa-video"></i> Bag kamera</p>
+            <span class="circle6"></span>
+            <p><i class="fas fa-battery-half"></i> Batteri</p>
+            <span class="circle7"></span>
+            <p><i class="far fa-circle"></i> Home knap</p>
+            <span class="circle8"></span>
+            <p><i class="fas fa-mobile"></i> Udskiftning af skærm</p>
+            <span class="circle9"></span>
+            <p><i class="fas fa-headphones-alt"></i> Jackstik</p>
+            <span class="circle10"></span>
+            <p><i class="fas fa-microphone-alt"></i> Mikrofon &amp; ladestik</p>
+            <span class="circle11"></span>
+        </div>
+        <img class="module" src="images/mobile.png" alt="SmartPhone">
+</div>
+
+    <div id="grundeMcare"></div>
+<div class="grunde">
+       <h2 class="module">Grunde til at vælge MCARE</h2>
+        <div id="fordele">
+
+            <div class="module"> <i class="fas fa-car"></i>
+                <p class="title">VI KOMMER HEN TIL DIG</p>
+                <p>mCares uddannede teknikker kommer til dit kontor og reparer din iPhone on-site, på stedet. iPad og Samsung skal vi have med til værkstedet til reparation, hvorefter de leveres efterfølgende.</p>
+            </div>
+
+            <div class="module"> <i class="fas fa-certificate"></i>
+                <p class="title">2 ÅRS GARANTI</p>
+                <p>Hos mCare står bag vores kvalitetsarbejde og kan derfor med sikkerhed tilbyde 2 års garanti på vores reparationer.</p>
+            </div>
+
+            <div class="module"><i class="fas fa-globe-europe"></i>
+                <p class="title">SAMARBEJDSPARTNER MED AARHUS KOMMUNE</p>
+                <p>mCare er samarbejdspartner med Aarhus Kommune, og det har vi været i flere år. Vi reparer smartphones og tabletter.</p>
+            </div>
+
+            <div class="module"><i class="fas fa-map-marker-alt"></i>
+                <p class="title">VI ER I AARHUS</p>
+                <p>Vi befinder os i Aarhus på Haslegårdsvej 10, 8210 Aarhus V. Du kan til enhver tid kommer med din enhed til os, men vi kører gerne ud til din arbejdsplads eller dit hjem efter aftale.</p>
+            </div>
+
+            <div class="module">
+                <i class="fas fa-money-bill-alt"></i>
+                <p class="title">FASTE PRISER</p>
+                <p>Enkel fast prisfastsættelse med rabatter til rådighed for flere reparationer, der skal afsluttes på en enkel aftale.</p>
+            </div>
+
+            <div class="module">
+                <i class="fas fa-hourglass-half"></i>
+                <p class="title">48 TIMER</p>
+                <p>Hvis du bestiller tid inden kl. 10:00, kan vi på samme dag reparere din iPhone.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="book">
+        <h2 class="module">Book en tid nu!</h2>
+        <button onclick="on()" class="bookTid module">Book tid!</button>
+    </div>
+
+
+    <footer id="kontakt">
+        <h3 class="module">Kontakt os</h3>
+        <p class="module">Adresse: Haslegårdsvej 10, 8210 -Aarhus V.</p>
+        <p class="module">Smid en E-mail på: rep@mcare.dk</p>
+        <p class="module">Send SMS eller ring: 29 29 29 36</p>
+        <p class="module">CVR: 34986665</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</body>
-</html>
+</body></html>
